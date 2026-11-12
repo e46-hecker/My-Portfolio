@@ -198,10 +198,70 @@ footer p {
     <!--jav-->
     <section id="#jav">
     <h1>Java Console-Based Game</h1>
+    <h2>My CC102 Final Performance Task</h2>
+    <h3>Number Hulaan Game</h3>
 
-    <p>Below is my final Performance Task in CC102.</p>
+    <pre><code>
+import java.util.Scanner;
+import java.util.Random;
+public class numz{
+    public static void main(String [] args){
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        int minRange = 1;
+        int maxRange = 100;
 
+        int secretNumber = random.nextInt(maxRange - minRange + 1) + minRange;
+
+        System.out.println("===========================================");
+        System.out.println("    WELCOME TO THE NUMBER GUESSING GAME!   ");
+        System.out.println("===========================================");
+
+        System.out.println("I have selected a number between " + minRange + " and " + maxRange + ".");
+        System.out.println("Try to guess it in as few attempts as possible!\n");
+
+        int attempts = 0;
+        boolean hasGuessedCorrectly = false;
+        while (!hasGuessedCorrectly) {
+            System.out.print("Enter your guess: ");
+
+        if (!scanner.hasNextInt()) {
+            System.out.println("Invalid input! Please enter a valid integer.\n");
+
+        scanner.next();
+        continue;
+        }
+
+        int playerGuess = scanner.nextInt();
+        attempts++;
+
+        if (playerGuess < minRange || playerGuess > maxRange) {
+            System.out.println("Out of bounds! Please guess a number from "
+                    + minRange + " to " + maxRange + ".\n");
+
+        } else if (playerGuess < secretNumber) {
+            System.out.println("Too low! Higherrrr.\n");
+
+        } else if (playerGuess > secretNumber) {
+            System.out.println("Too high! Guess a bit lower.\n");
+
+        } else {
+         hasGuessedCorrectly = true;
+
+        System.out.println("\n===========================================");
+        System.out.println("CONGRATULATIONS! You Guess it righttt!");
+        System.out.println("Secret Number: " + secretNumber);
+        System.out.println("Total Attempts: " + attempts);
+        System.out.println("===========================================");
+
+        scanner.close();
+        }
+
+    }
+}}
+    </code></pre>
     </section>
+    
 
     <!-- Footer -->
 <footer>
