@@ -1,239 +1,397 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ruzzeil's Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #10101c;
+            color: white;
+        }
+
+        nav {
+            background-color: #19192b;
+            padding: 20px 8%;
+            border-bottom: 2px solid #7047c9;
+            position: sticky;
+            top: 0;
+        }
+
+        nav h1 {
+            color: #a78bfa;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #a78bfa;
+            border-bottom: 2px solid #a78bfa;
+        }
+
+        section {
+            background-color: #1b1b2e;
+            margin: 30px auto;
+            padding: 30px;
+            border: 1px solid #33334d;
+            border-radius: 10px;
+            max-width: 1000px;
+            transition: 0.3s;
+        }
+
+        section:hover {
+            border-color: #7047c9;
+        }
+
+        section h1 {
+            color: #a78bfa;
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            color: #c4b5fd;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        section h3 {
+            color: #a78bfa;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #7047c9;
+            transition: 0.3s;
+        }
+
+        .profile img:hover {
+            transform: scale(1.05);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills li {
+            background-color: #292940;
+            padding: 10px 15px;
+            border-radius: 20px;
+            border: 1px solid #7047c9;
+            transition: 0.3s;
+        }
+
+        .skills li:hover {
+            background-color: #7047c9;
+            transform: translateY(-3px);
+        }
+
+        pre {
+            background-color: #10101c;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            border: 1px solid #33334d;
+            color: #c4b5fd;
+        }
+
+        footer {
+            background-color: #19192b;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #7047c9;
+            margin-top: 30px;
+        }
+
+        footer p {
+            color: #a78bfa;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                padding: 20px;
+            }
+
+            nav li {
+                display: block;
+                margin: 12px 0;
+            }
+
+            section {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .profile img {
+                width: 140px;
+                height: 140px;
+            }
+        }
+    </style>
 </head>
-   <style>
-* {
-    margin: 0;
-    padding: 0;
-}
 
-body {
-    font-family: Arial;
-    background-color: #10101c;
-    color: white;
-}
-
-nav {
-    background-color: #19192b;
-    padding: 20px;
-    border-bottom: 2px solid #7047c9;
-}
-
-nav h1 {
-    color: #a78bfa;
-}
-
-nav ul {
-    margin-top: 10px;
-    list-style: none;
-}
-
-nav li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav a {
-    color: white;
-}
-
-section {
-    background-color: #1b1b2e;
-    margin: 30px;
-    padding: 30px;
-    border: 1px solid #33334d;
-}
-
-section h1 {
-    color: #a78bfa;
-    margin-bottom: 20px;
-}
-
-section h2 {
-    color: #c4b5fd;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-section h3 {
-    color: #a78bfa;
-    margin-top: 20px;
-}
-
-p {
-    margin-bottom: 12px;
-}
-
-ul {
-    padding-left: 25px;
-}
-
-li {
-    margin-bottom: 8px;
-}
-
-footer {
-    background-color: #19192b;
-    padding: 20px;
-    text-align: center;
-    border-top: 2px solid #7047c9;
-}
-
-footer p {
-    color: #a78bfa;
-}
-</style>
 <body>
-    <!--nav-->
+
     <nav>
-        <h1>My Fortpolio</h1>
+        <h1>My Portfolio</h1>
+
         <ul>
-            <li><a href="#per">About me</a></li>
-            <li><a href="#ed">Education backround</a></li>
-            <li><a href="#sk">Skils</a></li>
+            <li><a href="#per">About Me</a></li>
+            <li><a href="#ed">Education Background</a></li>
+            <li><a href="#sk">Skills</a></li>
             <li><a href="#java">Java Code</a></li>
         </ul>
     </nav>
 
-    <!--me-->
-    <section id="#per">
-    <h1>Personal Information</h2>
-        
-    <h2>Personal Details</h1>
-    <p>Ruzzeil Luis D, Alcantara</p>
-    <p>Male</p>
-    <p>partida 1, Guimba, Nueva Ecija</p>
-    <p>June 3, 2008</p>
-    
-        <p>Hi Im Ruzzeil Luis D. alcantara and currently living in partida 1, Guimba, Nueva Ecija.
-           Im a BSIT 1st year student and this is my first time making a website about me.
-           I am interested in programming and learning more about technology because that is the world to day
-           technology is part of our lives now.I want to improve my skills and gain more
-           experience in web development and programming.
+
+    <section id="per">
+
+        <div class="profile">
+            <img src="profile.jpg" alt="Ruzzeil's Profile Picture">
+        </div>
+
+        <h1>Personal Information</h1>
+
+        <h2>Personal Details</h2>
+
+        <p><strong>Name:</strong> Ruzzeil Luis D. Alcantara</p>
+        <p><strong>Gender:</strong> Male</p>
+        <p><strong>Address:</strong> Partida 1, Guimba, Nueva Ecija</p>
+        <p><strong>Birthday:</strong> June 3, 2008</p>
+
+        <h2>About Me</h2>
+
+        <p>
+            Hi! I'm Ruzzeil Luis D. Alcantara and I am currently living in
+            Partida 1, Guimba, Nueva Ecija. I am a first-year BSIT student,
+            and this is my first time making a website about myself.
         </p>
 
-    <h3>Contact information</h3>
-      
-        <p>alcantararuzzeilluis@gmail.com</p>
-        <p>09985772346</p>
-    </section>
-    
-    <!--educ-->
-    <section id="#ed">
-    <h1>Educational Background</h1>
+        <p>
+            I am interested in programming and learning more about technology
+            because technology is now a big part of our daily lives. I want
+            to improve my skills and gain more experience in web development
+            and programming.
+        </p>
 
-    <h3>Secondary education</h3>
-    <p>San antionio San Pedro Laguna Elementary School</p>
+        <h3>Contact Information</h3>
 
-    <h3>Higher Education</h3>
-    <p>Galvan National High School</p>
+        <p>Email: alcantararuzzeilluis@gmail.com</p>
+        <p>Phone: 09985772346</p>
 
-    <h3>College</h3>
-    <p>Our Lady of the Sacred Heart College of Guimba Inc.</p>
-    <p>Bachelor of Science in Information Technology</p>
-    <p>First Year Student | AY 2026-2027</p>
     </section>
 
-    <!--skills-->
-    <section id="#sk">
-    <h1>My Skills</h1>
- 
-    <h2>Skills</h2>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Java Programming</li>
-        <li>Basic Web Development</li>
-        <li>Problem Solving</li>
-        <li>Teamwork</li>
-    </ul>
 
-    <h2>Charactiristic</h2>
-    <ul>
-        <li>Emphaty</li>
-        <li>resilience</li>
-        <li>Creative</li>
-        <li>Patient</li>
-        <li>Respectful</li>
-    </ul>
+    <section id="ed">
+
+        <h1>Educational Background</h1>
+
+        <h3>Elementary Education</h3>
+        <p>San Antonio San Pedro Laguna Elementary School</p>
+
+        <h3>Secondary Education</h3>
+        <p>Galvan National High School</p>
+
+        <h3>College</h3>
+        <p>Our Lady of the Sacred Heart College of Guimba Inc.</p>
+        <p>Bachelor of Science in Information Technology</p>
+        <p>First Year Student | AY 2026-2027</p>
+
     </section>
 
-    <!--jav-->
-    <section id="#jav">
-    <h1>Java Console-Based Game</h1>
-    <h2>My CC102 Final Performance Task</h2>
-    <h3>Number Hulaan Game</h3>
 
-    <pre><code>
+    <section id="sk">
+
+        <h1>My Skills</h1>
+
+        <h2>Technical Skills</h2>
+
+        <ul class="skills">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Java Programming</li>
+            <li>Basic Web Development</li>
+            <li>Problem Solving</li>
+            <li>Teamwork</li>
+        </ul>
+
+
+        <h2>Characteristics</h2>
+
+        <ul class="skills">
+            <li>Empathy</li>
+            <li>Resilience</li>
+            <li>Creative</li>
+            <li>Patient</li>
+            <li>Respectful</li>
+        </ul>
+
+    </section>
+
+
+    <section id="java">
+
+        <h1>Java Console-Based Game</h1>
+
+        <h2>My CC102 Final Performance Task</h2>
+
+        <h3>Number Hulaan Game</h3>
+
+        <pre><code>
 import java.util.Scanner;
 import java.util.Random;
-public class numz{
-    public static void main(String [] args){
+
+public class numz {
+
+    public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
+
         int minRange = 1;
         int maxRange = 100;
 
-        int secretNumber = random.nextInt(maxRange - minRange + 1) + minRange;
+        int secretNumber =
+        random.nextInt(maxRange - minRange + 1) + minRange;
 
         System.out.println("===========================================");
         System.out.println("    WELCOME TO THE NUMBER GUESSING GAME!   ");
         System.out.println("===========================================");
 
-        System.out.println("I have selected a number between " + minRange + " and " + maxRange + ".");
+        System.out.println("I have selected a number between "
+                + minRange + " and " + maxRange + ".");
+
         System.out.println("Try to guess it in as few attempts as possible!\n");
 
         int attempts = 0;
         boolean hasGuessedCorrectly = false;
+
         while (!hasGuessedCorrectly) {
+
             System.out.print("Enter your guess: ");
 
-        if (!scanner.hasNextInt()) {
-            System.out.println("Invalid input! Please enter a valid integer.\n");
+            if (!scanner.hasNextInt()) {
 
-        scanner.next();
-        continue;
+                System.out.println(
+                    "Invalid input! Please enter a valid integer.\n"
+                );
+
+                scanner.next();
+                continue;
+            }
+
+            int playerGuess = scanner.nextInt();
+
+            attempts++;
+
+            if (playerGuess < minRange ||
+                    playerGuess > maxRange) {
+
+                System.out.println(
+                    "Out of bounds! Please guess a number from "
+                    + minRange + " to " + maxRange + ".\n"
+                );
+
+            } else if (playerGuess < secretNumber) {
+
+                System.out.println("Too low! Guess higher.\n");
+
+            } else if (playerGuess > secretNumber) {
+
+                System.out.println("Too high! Guess lower.\n");
+
+            } else {
+
+                hasGuessedCorrectly = true;
+
+                System.out.println(
+                    "\n==========================================="
+                );
+
+                System.out.println(
+                    "CONGRATULATIONS! You guessed it right!"
+                );
+
+                System.out.println(
+                    "Secret Number: " + secretNumber
+                );
+
+                System.out.println(
+                    "Total Attempts: " + attempts
+                );
+
+                System.out.println(
+                    "==========================================="
+                );
+            }
         }
-
-        int playerGuess = scanner.nextInt();
-        attempts++;
-
-        if (playerGuess < minRange || playerGuess > maxRange) {
-            System.out.println("Out of bounds! Please guess a number from "
-                    + minRange + " to " + maxRange + ".\n");
-
-        } else if (playerGuess < secretNumber) {
-            System.out.println("Too low! Higherrrr.\n");
-
-        } else if (playerGuess > secretNumber) {
-            System.out.println("Too high! Guess a bit lower.\n");
-
-        } else {
-         hasGuessedCorrectly = true;
-
-        System.out.println("\n===========================================");
-        System.out.println("CONGRATULATIONS! You Guess it righttt!");
-        System.out.println("Secret Number: " + secretNumber);
-        System.out.println("Total Attempts: " + attempts);
-        System.out.println("===========================================");
 
         scanner.close();
-        }
-
     }
-}}
-    </code></pre>
-    </section>
-    
+}
+        </code></pre>
 
-    <!-- Footer -->
-<footer>
-    <p>© Ruzzeil Luis Alcantara | Web Portfolio :)</p>
-</footer>
+    </section>
+
+
+    <footer>
+        <p>© Ruzzeil Luis D. Alcantara | Web Portfolio :)</p>
+    </footer>
 
 </body>
 </html>
+```
